@@ -394,10 +394,9 @@ Returns json data containing the message that the task is deleted.
   });
   ```
 
-* **Example:**
-<br>
+* **Example:** <br>
 
-![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/delete_image.png)
+  ![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/delete_image.png)
 
 ## Folder Structure
 ```
