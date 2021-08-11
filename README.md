@@ -1,6 +1,5 @@
 # Node.js Backend - ToDo App
-#### Backend server for ToDo Application created with Node.js
-<br>
+#### Backend server for ToDo Application created with Node.js<br>
 
 ## Introduction
 
@@ -90,7 +89,7 @@ Returns json data containing objects of each Todo.
   ```
 
 * **Sample Call:**
-```sh
+  ```sh
   $.ajax({
       url: "/tasks",
       dataType: "json",
@@ -103,6 +102,7 @@ Returns json data containing objects of each Todo.
 
 * **Example:**
 <br>
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 
@@ -154,7 +154,7 @@ Returns json data containing objects of Todo ID provided.
 }`
 
 * **Sample Call:**
-```sh
+  ```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -168,6 +168,7 @@ Returns json data containing objects of Todo ID provided.
 
 * **Example:**
 <br>
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 3. Add a new Todo
@@ -196,7 +197,7 @@ Returns json data containing the message and added task.
 
 	 **Code:** 200 <br />
 	**Content:**
-```sh
+  ```sh
   {
     "message": "successfully Added task",
     "data": {
@@ -234,7 +235,7 @@ Returns json data containing the message and added task.
 
 
 * **Sample Call:**
-```sh
+  ```sh
   $.ajax({
       url: "/tasks",
       dataType: "json",
@@ -248,6 +249,7 @@ Returns json data containing the message and added task.
 
 * **Example:**
 <br>
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 4. Update an existing Todo
@@ -276,7 +278,7 @@ Returns json data containing the message and Updated task.
 
 	 **Code:** 200 <br />
 	**Content:**
-```sh
+  ```sh
   {
     "message": "successfully updated task",
     "data": {
@@ -314,7 +316,7 @@ Returns json data containing the message and Updated task.
 
 
 * **Sample Call:**
-```sh
+  ```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -329,6 +331,7 @@ Returns json data containing the message and Updated task.
 
 * **Example:**
 <br>
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 5. Delete an existing Todo
@@ -380,7 +383,7 @@ Returns json data containing the message that the task is deleted.
 
 
 * **Sample Call:**
-```sh
+  ```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -393,6 +396,7 @@ Returns json data containing the message that the task is deleted.
 
 * **Example:**
 <br>
+
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ## Folder Structure
