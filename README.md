@@ -103,7 +103,7 @@ Returns json data containing objects of each Todo.
 * **Example:**
 <br>
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/getall_image.png)
 
 
 ### 2. GET Todo by ID
@@ -169,7 +169,7 @@ Returns json data containing objects of Todo ID provided.
 * **Example:**
 <br>
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/getbyid_image.png)
 
 ### 3. Add a new Todo
 
@@ -250,7 +250,7 @@ Returns json data containing the message and added task.
 * **Example:**
 <br>
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/addtodo_image.png)
 
 ### 4. Update an existing Todo
 
@@ -332,7 +332,7 @@ Returns json data containing the message and Updated task.
 * **Example:**
 <br>
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/update_image.png)
 
 ### 5. Delete an existing Todo
 
@@ -397,7 +397,7 @@ Returns json data containing the message that the task is deleted.
 * **Example:**
 <br>
 
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/delete_image.png)
 
 ## Folder Structure
 ```
