@@ -35,7 +35,8 @@ From your command line:
    ```
 4. Run the app
    ```JS
-   $ npm run start```
+   $ npm run start
+   ```
 
 
 ## Endpoints
@@ -65,39 +66,39 @@ Returns json data containing objects of each Todo.
 
 	 **Code:** 200 <br />
 	**Content:**
-```
-{
-	"message": "successfully fetched all tasks",
-	"data": [
-		{
-			"taskId": "9vf61mv7ks5rgz6m",
-			"content": "First task for backend",
-			"createdAt": "Some date ",
-			"updatedAt": "Some date ",
-			"isCompleted": "false"
-		},
-		{
-			"taskId": "9vf62iwnks67y6q5",
-			"content": "Task 5",
-			"createdAt": "Some date ",
-			"updatedAt": "Some date ",
-			"isCompleted": "false"
-		}
-	]
-}```
+
+
+  {
+    "message": "successfully fetched all tasks",
+    "data": [
+      {
+        "taskId": "9vf61mv7ks5rgz6m",
+        "content": "First task for backend",
+        "createdAt": "Some date ",
+        "updatedAt": "Some date ",
+        "isCompleted": "false"
+      },
+      {
+        "taskId": "9vf62iwnks67y6q5",
+        "content": "Task 5",
+        "createdAt": "Some date ",
+        "updatedAt": "Some date ",
+        "isCompleted": "false"
+      }
+    ]
+  }
 
 * **Sample Call:**
 
-	```javascript
-$.ajax({
-		url: "/tasks",
-		dataType: "json",
-		type : "GET",
-		success : function(r) {
-		console.log(r);
-	}
-});
-```
+  $.ajax({
+      url: "/tasks",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+      console.log(r);
+    }
+  });
+
 * **Example:**
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
@@ -128,17 +129,17 @@ Returns json data containing objects of Todo ID provided.
 
 	 **Code:** 200 <br />
 	**Content:**
-```
-{
-	"message": "successfully fetched task",
-	"data": {
-		"taskId": "9vf617xbks7t0ads",
-		"content": "Some Task is completed",
-    	"createdAt": "10/08/21 22:07:30",
-    	"updatedAt": "11/08/21 12:30:15",
-    	"isComplete": true
-	}
-}```
+  {
+    "message": "successfully fetched task",
+    "data": {
+      "taskId": "9vf617xbks7t0ads",
+      "content": "Some Task is completed",
+        "createdAt": "10/08/21 22:07:30",
+        "updatedAt": "11/08/21 12:30:15",
+        "isComplete": true
+    }
+  }
+
 * **Error Response:**
 
   **Code:** 404 NOT FOUND <br />
@@ -149,16 +150,16 @@ Returns json data containing objects of Todo ID provided.
 
 * **Sample Call:**
 
-	```javascript
-$.ajax({
-		url: "/tasks/9vf617xbks7t0ads",
-		dataType: "json",
-		type : "GET",
-		success : function(r) {
-		console.log(r);
-	}
-});
-```
+  $.ajax({
+      url: "/tasks/9vf617xbks7t0ads",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+      console.log(r);
+    }
+  });
+
+
 * **Example:**
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
@@ -188,17 +189,18 @@ Returns json data containing the message and added task.
 
 	 **Code:** 200 <br />
 	**Content:**
-```
-{
-	"message": "successfully Added task",
-	"data": {
-		"taskId": "9vf617xbks7t0ads",
-		"content": "Some Task is completed",
-    	"createdAt": "10/08/21 22:07:30",
-    	"updatedAt": "11/08/21 12:30:15",
-    	"isComplete": false
-	}
-}```
+
+  {
+    "message": "successfully Added task",
+    "data": {
+      "taskId": "9vf617xbks7t0ads",
+      "content": "Some Task is completed",
+        "createdAt": "10/08/21 22:07:30",
+        "updatedAt": "11/08/21 12:30:15",
+        "isComplete": false
+    }
+  }
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
@@ -225,17 +227,16 @@ Returns json data containing the message and added task.
 
 * **Sample Call:**
 
-	```javascript
-$.ajax({
-		url: "/tasks",
-		dataType: "json",
-		type : "POST",
-		data : {"content": "some task", "createdAt": "10/08/21 22:07:30", "updatedAt": ""}
-		success : function(r) {
-			console.log(r);
-		}
-});
-```
+  $.ajax({
+      url: "/tasks",
+      dataType: "json",
+      type : "POST",
+      data : {"content": "some task", "createdAt": "10/08/21 22:07:30", "updatedAt": ""}
+      success : function(r) {
+        console.log(r);
+      }
+  });
+
 * **Example:**
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
@@ -265,17 +266,18 @@ Returns json data containing the message and Updated task.
 
 	 **Code:** 200 <br />
 	**Content:**
-```
-{
-	"message": "successfully updated task",
-	"data": {
-		"taskId": "9vf617xbks7t0ads",
-		"content": "Some Task is completed",
-    	"createdAt": "10/08/21 22:07:30",
-    	"updatedAt": "11/08/21 12:30:15",
-    	"isComplete": false
-	}
-}```
+
+  {
+    "message": "successfully updated task",
+    "data": {
+      "taskId": "9vf617xbks7t0ads",
+      "content": "Some Task is completed",
+        "createdAt": "10/08/21 22:07:30",
+        "updatedAt": "11/08/21 12:30:15",
+        "isComplete": false
+    }
+  }
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
@@ -302,17 +304,17 @@ Returns json data containing the message and Updated task.
 
 * **Sample Call:**
 
-	```javascript
-$.ajax({
-		url: "/tasks/9vf617xbks7t0ads",
-		dataType: "json",
-		type : "POST",
-		data : {"content": "some task", "createdAt": "10/08/21 22:07:30", "updatedAt": "11/08/21 12:30:15", "isComplete": true}
-		success : function(r) {
-			console.log(r);
-		}
-});
-```
+  $.ajax({
+      url: "/tasks/9vf617xbks7t0ads",
+      dataType: "json",
+      type : "POST",
+      data : {"content": "some task", "createdAt": "10/08/21 22:07:30", "updatedAt": "11/08/21 12:30:15", "isComplete": true}
+      success : function(r) {
+        console.log(r);
+      }
+  });
+
+
 * **Example:**
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
@@ -342,10 +344,10 @@ Returns json data containing the message that the task is deleted.
 
 	 **Code:** 200 <br />
 	**Content:**
-```
-{
-	"message": "successfully deleted task",
-}```
+  {
+    "message": "successfully deleted task",
+  }
+
 * **Error Response:**
 
   * **Code:** 404 NOT FOUND <br />
@@ -364,16 +366,15 @@ Returns json data containing the message that the task is deleted.
 
 * **Sample Call:**
 
-	```javascript
-$.ajax({
-		url: "/tasks/9vf617xbks7t0ads",
-		dataType: "json",
-		type : "DELETE",
-		success : function(r) {
-			console.log(r);
-		}
-});
-```
+  $.ajax({
+      url: "/tasks/9vf617xbks7t0ads",
+      dataType: "json",
+      type : "DELETE",
+      success : function(r) {
+        console.log(r);
+      }
+  });
+
 * **Example:**
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
@@ -415,6 +416,8 @@ $.ajax({
 
 ## Contact
 
-Author - Saima Sayed
+Author - Saima Sayed 
+<br>
 Project Resources - https://github.com/Saima422/ToDo-Backend-Node.js
+<br>
 LinkedIn - https://www.linkedin.com/in/saima-sayed-6482481b9/
