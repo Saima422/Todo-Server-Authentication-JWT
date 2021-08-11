@@ -67,7 +67,7 @@ Returns json data containing objects of each Todo.
 	 **Code:** 200 <br />
 	**Content:**
 
-
+  ```sh
   {
     "message": "successfully fetched all tasks",
     "data": [
@@ -87,9 +87,10 @@ Returns json data containing objects of each Todo.
       }
     ]
   }
+  ```
 
 * **Sample Call:**
-
+```sh
   $.ajax({
       url: "/tasks",
       dataType: "json",
@@ -98,8 +99,10 @@ Returns json data containing objects of each Todo.
       console.log(r);
     }
   });
+  ```
 
 * **Example:**
+<br>
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 
@@ -129,6 +132,7 @@ Returns json data containing objects of Todo ID provided.
 
 	 **Code:** 200 <br />
 	**Content:**
+  ```sh
   {
     "message": "successfully fetched task",
     "data": {
@@ -139,6 +143,7 @@ Returns json data containing objects of Todo ID provided.
         "isComplete": true
     }
   }
+  ```
 
 * **Error Response:**
 
@@ -149,7 +154,7 @@ Returns json data containing objects of Todo ID provided.
 }`
 
 * **Sample Call:**
-
+```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -158,9 +163,11 @@ Returns json data containing objects of Todo ID provided.
       console.log(r);
     }
   });
+  ```
 
 
 * **Example:**
+<br>
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 3. Add a new Todo
@@ -189,7 +196,7 @@ Returns json data containing the message and added task.
 
 	 **Code:** 200 <br />
 	**Content:**
-
+```sh
   {
     "message": "successfully Added task",
     "data": {
@@ -200,6 +207,7 @@ Returns json data containing the message and added task.
         "isComplete": false
     }
   }
+  ```
 
 * **Error Response:**
 
@@ -226,7 +234,7 @@ Returns json data containing the message and added task.
 
 
 * **Sample Call:**
-
+```sh
   $.ajax({
       url: "/tasks",
       dataType: "json",
@@ -236,8 +244,10 @@ Returns json data containing the message and added task.
         console.log(r);
       }
   });
+  ```
 
 * **Example:**
+<br>
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 4. Update an existing Todo
@@ -266,7 +276,7 @@ Returns json data containing the message and Updated task.
 
 	 **Code:** 200 <br />
 	**Content:**
-
+```sh
   {
     "message": "successfully updated task",
     "data": {
@@ -277,6 +287,7 @@ Returns json data containing the message and Updated task.
         "isComplete": false
     }
   }
+  ```
 
 * **Error Response:**
 
@@ -303,7 +314,7 @@ Returns json data containing the message and Updated task.
 
 
 * **Sample Call:**
-
+```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -313,9 +324,11 @@ Returns json data containing the message and Updated task.
         console.log(r);
       }
   });
+  ```
 
 
 * **Example:**
+<br>
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ### 5. Delete an existing Todo
@@ -344,9 +357,11 @@ Returns json data containing the message that the task is deleted.
 
 	 **Code:** 200 <br />
 	**Content:**
+  ```sh
   {
     "message": "successfully deleted task",
   }
+  ```
 
 * **Error Response:**
 
@@ -365,7 +380,7 @@ Returns json data containing the message that the task is deleted.
 
 
 * **Sample Call:**
-
+```sh
   $.ajax({
       url: "/tasks/9vf617xbks7t0ads",
       dataType: "json",
@@ -374,8 +389,10 @@ Returns json data containing the message that the task is deleted.
         console.log(r);
       }
   });
+  ```
 
 * **Example:**
+<br>
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 ## Folder Structure
