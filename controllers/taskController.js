@@ -120,7 +120,7 @@ const deleteTask = (req, res, next) => {
 
         return sendResponse({
             res,
-            statusCode: 200,
+            statusCode: 204,
             message: "successfully deleted task",
         });
     });
