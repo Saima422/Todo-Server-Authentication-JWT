@@ -403,13 +403,12 @@ Returns json data containing the message that the task is deleted.
 │   └── tasks.json
 ├── models
 │   └── taskModel.js
-├── node_modules
 ├── package.json
 ├── package-lock.json
 ├── routes
 │   └── taskRouter.js
 └── utils
-└── sendResponse.js
+    └── sendResponse.js
 ```
 
 ## Scope and Functionality
