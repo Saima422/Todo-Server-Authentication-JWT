@@ -3,15 +3,15 @@ const express = require("express");
 const dotenv = require("dotenv");
 const taskRouter = require("./routes/taskRouter");
 dotenv.config({ path: "./config.env" });
-// const serveStatic = require('serve-static');
+const serveStatic = require('serve-static');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // express.static(root);
 
 
-// app.use(serveStatic('public', { 'index': ['index.html'] }))
-app.use(express.static('public'))
+app.use(serveStatic('public', { 'index': ['index.html'] }))
+// app.use(express.static('public'))
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
