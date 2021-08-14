@@ -5,12 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -e js",
+    "dev": "nodemon -e .js",
     "start": "node app.js"
   },
   "author": "saima sayed",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "uniqid": "^5.3.0"
   }
