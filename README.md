@@ -354,13 +354,8 @@ Returns json data containing the message that the task is deleted.
 
 * **Success Response:**
 
-	 **Code:** 200 <br />
-	**Content:**
-  ```sh
-  {
-    "message": "successfully deleted task",
-  }
-  ```
+	 **Code:** 204 <br />
+	 
 
 * **Error Response:**
 
