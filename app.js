@@ -18,7 +18,7 @@ var showdown  = require('showdown'),
 
 // app.use(serveStatic('public', `${html}`));
 
-app.use(serveStatic('public', { 'index': ['index.html'] }))
+// app.use(serveStatic('public', { 'index': ['index.html'] }))
 // app.use(express.static('public'))
 
 app.use((req, res, next) => {
