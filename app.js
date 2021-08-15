@@ -10,6 +10,14 @@ app.use(express.urlencoded({ extended: false }));
 // express.static(root);
 
 
+
+var showdown  = require('showdown'),
+    converter = new showdown.Converter(),
+    text      = '# hello, markdown!',
+    html      = converter.makeHtml(text);
+
+// app.use(serveStatic('public', `${html}`));
+
 app.use(serveStatic('public', { 'index': ['index.html'] }))
 // app.use(express.static('public'))
 
@@ -21,10 +29,6 @@ app.use((req, res, next) => {
     next();
 });
 
-var showdown  = require('showdown'),
-    converter = new showdown.Converter(),
-    text      = '# hello, markdown!',
-    html      = converter.makeHtml(text);
 
 app.use("/tasks",taskRouter);
 
