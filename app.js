@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(serveStatic('public', `${html}`));
 
 // app.use(serveStatic('public', { 'index': ['index.html'] }))
-// app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
