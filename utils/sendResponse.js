@@ -1,4 +1,3 @@
-
 const sendResponse = ({res, statusCode, message, data, error}) => {
     res.status(statusCode);
     if(error){
