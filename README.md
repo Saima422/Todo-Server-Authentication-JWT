@@ -189,7 +189,7 @@ Returns json data containing the message and added task.
 
 * **Data Params**
 
-	`{ "content": [String], "createdAt": [Date(DD/MM/YY) Time(HH MM SS)], "updatedAt"[Date(DD/MM/YY) Time(HH MM SS)],}`
+	`{ "content": [String], "createdAt": [Time(HH MM) Date(DD/MM/YY)], "updatedAt": [ime(HH MM) Date(DD/MM/YY)}`
 
 * **Success Response:**
 
@@ -217,7 +217,7 @@ Returns json data containing the message and added task.
 }`
 
 	OR
- * **Code:** 400 <br />
+  * **Code:** 400 <br />
     **Content:** `{
     "message": "Invalid Request",
     "error": "Invalid Request"
@@ -225,7 +225,7 @@ Returns json data containing the message and added task.
 
 	OR
 
- * **Code:** 500<br />
+  * **Code:** 500<br />
     **Content:** `{
     "message": "An error occurred while writing file",
     "error": error that has occurred
@@ -269,7 +269,7 @@ Returns json data containing the message and Updated task.
 
 * **Data Params**
 
-	`{ "content": [String], "createdAt": [Date(DD/MM/YY) Time(HH MM SS)], "updatedAt"[Date(DD/MM/YY) Time(HH MM SS)], "isComplete": [Boolean]}`
+	`{ "content": [String], "createdAt": [Time(HH MM) Date(DD/MM/YY)], "updatedAt": [ime(HH MM) Date(DD/MM/YY)}, "isComplete": [Boolean]}`
 
 * **Success Response:**
 
@@ -297,7 +297,7 @@ Returns json data containing the message and Updated task.
 }`
 
 	OR
- * **Code:** 400 <br />
+  * **Code:** 400 <br />
     **Content:** `{
     "message": "Invalid Request",
     "error": "Invalid Request"
@@ -305,7 +305,7 @@ Returns json data containing the message and Updated task.
 
 	OR
 
- * **Code:** 500<br />
+  * **Code:** 500<br />
     **Content:** `{
     "message": "An error occured while writing file during update",
     "error": error that has occurred
@@ -366,7 +366,7 @@ Returns json data containing the message that the task is deleted.
 
 	OR
 
- * **Code:** 500<br />
+  * **Code:** 500<br />
     **Content:** `{
     "message": "An error occured while writing file during delete",
     "error": error that has occurred
@@ -388,6 +388,11 @@ Returns json data containing the message that the task is deleted.
 * **Example:** 
 
   ![](https://saima422.github.io/Image-JSON-Data-Repo/images_Todo-Backend_Readme/delete_image.png)
+
+## POSTMAN
+View all Sample Requests in POSTMAN.<br>
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9aeb37683d33c80c8b18?action=collection%2Fimport)
 
 ## Folder Structure
 ```
@@ -428,6 +433,14 @@ Returns json data containing the message that the task is deleted.
 
 Author - Saima Sayed 
 <br>
-Project Resources - https://github.com/Saima422/ToDo-Backend-Node.js
+Project Resources (Backend) - https://github.com/Saima422/ToDo-Backend-Node.js
 <br>
 LinkedIn - https://www.linkedin.com/in/saima-sayed-6482481b9/
+
+## Also Refer
+You can also refer to the fontend Todo-List project integrated with this backend repo <br>
+[Todo-List Frontend Repo](https://github.com/Saima422/Todo-Frontend-Integrated-with-Backend)<br>
+[Todo-List Frontend Demo](https://hopeful-tesla-59c08e.netlify.app/)
+
+
+
