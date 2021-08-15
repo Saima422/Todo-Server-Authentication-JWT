@@ -3,18 +3,17 @@ const express = require("express");
 const dotenv = require("dotenv");
 const taskRouter = require("./routes/taskRouter");
 dotenv.config({ path: "./config.env" });
-const serveStatic = require('serve-static');
+
+// const serveStatic = require('serve-static');
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// express.static(root);
 
-
-
-var showdown  = require('showdown'),
-    converter = new showdown.Converter(),
-    text      = '# hello, markdown!',
-    html      = converter.makeHtml(text);
+// var showdown  = require('showdown'),
+//     converter = new showdown.Converter(),
+//     text      = '# hello, markdown!',
+//     html      = converter.makeHtml(text);
 
 // app.use(serveStatic('public', `${html}`));
 
