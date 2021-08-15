@@ -99,6 +99,12 @@ Returns json data containing objects of each Todo.
     }
   });
   ```
+  OR
+  ```sh
+  fetch('/tasks')
+    .then(response => response.json())
+    .then(data => console.log(data));
+  ```
 
 * **Example:**
 
@@ -162,6 +168,12 @@ Returns json data containing objects of Todo ID provided.
       console.log(r);
     }
   });
+  ```
+   OR
+  ```sh
+  fetch('/tasks/taskId')
+    .then(response => response.json())
+    .then(data => console.log(data));
   ```
 
 
@@ -244,6 +256,19 @@ Returns json data containing the message and added task.
       }
   });
   ```
+   OR
+  ```sh
+  fetch('/tasks', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(your data variable),
+                  }
+        )
+    .then(response => response.json())
+    .then(data => console.log(data));
+  ```
 
 * **Example:**
 
@@ -324,6 +349,19 @@ Returns json data containing the message and Updated task.
       }
   });
   ```
+  OR
+  ```sh
+  fetch('/tasks/taskId', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(your data variable),
+                  }
+        )
+    .then(response => response.json())
+    .then(data => console.log(data));
+  ```
 
 
 * **Example:**
@@ -383,6 +421,15 @@ Returns json data containing the message that the task is deleted.
         console.log(r);
       }
   });
+  ```
+  OR
+  ```sh
+  fetch('/tasks/taskId', {
+                    method: 'DELETE',
+                  }
+        )
+    .then(response => response.json())
+    .then(data => console.log(data));
   ```
 
 * **Example:** 
