@@ -9,15 +9,15 @@
   {
     "taskId": "9vf610z8ksdbv1cm",
     "content": "here are some tasks (updated)",
-    "createdAt": "at 3pm",
-    "updatedAt": "at 5pm",
+    "createdAt": "13:14 13/8/2021",
+    "updatedAt": "16:15 13/8/2021",
     "isComplete": false
   },
   {
     "taskId": "9vf610z8ksdbx24m",
     "content": "add a new task (updated)",
-    "createdAt": "at 5pm",
-    "updatedAt": "at 6pm",
-    "isComplete": "false"
+    "createdAt": "22:14 13/8/2021",
+    "updatedAt": "23:15 13/8/2021",
+    "isComplete": false
   }
 ]
