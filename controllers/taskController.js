@@ -1,24 +1,35 @@
-const fs = require("fs");
-const path = require("path");
-const Task = require("../models/taskModel");
-const filepath = path.join(__dirname, "..","data", "tasks.json");
-const Tasks = JSON.parse(fs.readFileSync(filepath, "utf-8"));
 const sendResponse = require("../utils/sendResponse");
+const { mongoGet, mongoDelete, mongoAdd, mongoUpdate } = require("../connection/mongoConnect.js");
+const { ObjectId } = require("mongodb");
+const Task = require("../models/taskModel");
+let resData;
 
+const getAllTasks = async (req,res,next) =>{
 
-const getAllTasks = (req,res,next) =>{
+    resData = await mongoGet({}, req.user.userId);
     return sendResponse({
         res,
         statusCode: 200,
         message: "successfully fetched all tasks",
-        data: Tasks,
+        data: resData,
     });
 };
 
-const getTaskByTaskId = (req, res, next) => {
+const getTaskByTaskId = async (req, res, next) => {
     let { taskId } = req.params;
-    let foundTask = Tasks.find((task) => task.taskId === taskId);
-    if(!foundTask){
+
+    if(!ObjectId.isValid(taskId)){
+        return sendResponse({
+            res,
+            statusCode: 404,
+            message: "Invalid Id",
+            error: "Invalid Id"
+        });
+    }
+
+    resData = await mongoGet({ _id: new ObjectId(taskId)}, req.user.userId);
+
+    if(resData.length === 0 || !resData){
         return sendResponse({
             res,
             statusCode: 404,
@@ -26,11 +37,12 @@ const getTaskByTaskId = (req, res, next) => {
             error: "Invalid Id"
         });
     } 
+
     return sendResponse({
         res,
         statusCode: 200,
         message: "successfully fetched task",
-        data: foundTask
+        data: resData
     });
 };
 
@@ -72,91 +84,79 @@ const addTaskValidation = (req, res, next) => {
     }
 };
 
-const addTask = (req, res, next) => {
+const addTask = async (req, res, next) => {
+
     const newTask = new Task(req.body);
-    Tasks.push(newTask);
 
-    fs.writeFile(filepath, JSON.stringify(Tasks, null, 2), (err)=> {
-        if(err){
-            Tasks.pop();
+    resData = await mongoAdd(newTask, req.user.userId);
+    let resObj = await mongoGet({ _id: new ObjectId(resData.insertedId)}, req.user.userId);
 
-            return sendResponse({
-                res,
-                statusCode: 500,
-                message: "An error occured while writing file",
-                error: err,
-            });
-        }
-
-        return sendResponse({
-            res,
-            statusCode: 200,
-            message: "successfully Added task",
-            data: newTask,
-        });
+    return sendResponse({
+        res,
+        statusCode: 200,
+        message: "successfully Added task",
+        data: resObj,
     });
 };
 
-const deleteTask = (req, res, next) => {
-    let index = Tasks.findIndex( item => item.taskId === req.params.taskId );
-    if(index === -1){
+const deleteTask = async (req, res, next) => {
+    let { taskId } = req.params;
+
+    if(!ObjectId.isValid(taskId)){
         return sendResponse({
             res,
             statusCode: 404,
-            message: "Task with id not found",
+            message: "Invalid Id",
+            error: "Invalid Id"
         });
     }
-    Tasks.splice(index, 1);
 
-    fs.writeFile(filepath, JSON.stringify(Tasks, null, 2), (err)=>{
-        if(err){
-            return sendResponse({
-                res,
-                statusCode: 500,
-                message: "An error occured while writing file during delete",
-                error: err,
-            });
-        }
-
+    resData = await mongoDelete({ _id: new ObjectId(taskId)}, req.user.userId);
+    if(!resData){
         return sendResponse({
             res,
-            statusCode: 204,
-            message: "successfully deleted task",
+            statusCode: 500,
+            message: "An error occured during delete",
+            error: "Invalid Id",
         });
+    }
+   
+    return sendResponse({
+        res,
+        statusCode: 204,
+        message: "successfully deleted task",
     });
 };
 
-const updateTask = (req, res, next) => {
-    let index = Tasks.findIndex( item => item.taskId === req.params.taskId );
+const updateTask = async (req, res, next) => {
+    let { taskId } = req.params;
 
-    if(index === -1){
+    if(!ObjectId.isValid(taskId)){
         return sendResponse({
             res,
             statusCode: 404,
-            message: "Task with id not found",
+            message: "Invalid Id",
+            error: "Invalid Id"
         });
     }
 
-    Object.keys(req.body).forEach((key)=>{
-        Tasks[index][key] = req.body[key];
-    });
+    resData = await mongoUpdate({ _id: new ObjectId(taskId)}, { $set: req.body}, req.user.userId);
 
-    fs.writeFile(filepath, JSON.stringify(Tasks, null, 2), (err)=>{
-        if(err){
-            return sendResponse({
-                res,
-                statusCode: 500,
-                message: "An error occured while writing file during update",
-                error: err,
-            });
-        }
+    if(await !resData){
         return sendResponse({
             res,
-            statusCode: 200,
-            message: "successfully updated task",
-            data: Tasks[index]
+            statusCode: 404,
+            message: "Invalid Id",
+            error: "Invalid Id",
         });
-    });  
+    }
+
+    return sendResponse({
+        res,
+        statusCode: 200,
+        message: "successfully updated task",
+        data: resData,
+    });
 };
 
 module.exports = {

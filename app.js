@@ -1,17 +1,21 @@
-const path = require("path");
-const fs = require("fs");
 const express = require("express");
+// const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const taskRouter = require("./routes/taskRouter");
 dotenv.config({ path: "./config.env" });
-
+const taskRouter = require("./routes/taskRouter");
+const userRouter = require("./routes/userRouter");
+const auth = require("./middleware/auth");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-let text= `<embed type="text/markdown" src="https://saima422.github.io/ToDo-Backend-Node.js/" height="100%" width="100%"/>`;
-
-fs.writeFileSync("./public/index.html", text);
+// mongoose.connect('mongodb://localhost:27017/todoData',
+//   {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+//   }
+// );
 
 app.use(express.static('public'));
 
@@ -24,9 +28,20 @@ app.use((req, res, next) => {
 });
 
 app.use("/tasks",taskRouter);
+app.use('/user', userRouter);
+app.post('/welcome', auth, (req,res) => {
+    res.status(200).send('Welcome');
+})
+
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "connection error: "));
+// db.once("open", function () {
+//   console.log("Connected successfully");
+// });
 
 const port = process.env.PORT || 3000; 
 
 app.listen(port, ()=>{
     console.log(`Server Started on port ${port}`);
 })
+
